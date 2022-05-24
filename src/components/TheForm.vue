@@ -1,12 +1,12 @@
 <template>
-  <form>
+  <form @submit.prevent="submitForm">
     <div class="form-control">
       <label for="user-name">Your Name</label>
-      <input id="user-name" name="user-name" type="text" />
+      <input v-model="userName" id="user-name" name="user-name" type="text" />
     </div>
     <div class="form-control">
       <label for="age">Your Age (Years)</label>
-      <input id="age" name="age" type="number" />
+      <input v-model.number="userAge" id="age" name="age" type="number" />
     </div>
     <div class="form-control">
       <label for="referrer">How did you hear about us?</label>
@@ -51,6 +51,22 @@
     </div>
   </form>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      userName: '',
+      userAge: null
+    }
+  },
+  methods: {
+    submitForm() {
+
+    }
+  },
+}
+</script>
 
 <style scoped>
 form {
