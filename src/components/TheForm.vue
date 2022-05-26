@@ -48,7 +48,7 @@
       </div>
     </div>
     <div class="form-control">
-      <rating-control></rating-control>
+      <rating-control v-model="rating"></rating-control>
     </div>
     <div class="form-control">
       <input v-model="confirm" type="checkbox" name="confirm-terms" id="confirm-terms">
@@ -73,7 +73,8 @@ export default {
       interest: [],
       how: null,
       confirm: false,
-      userNameValidity: ''
+      userNameValidity: '',
+      rating: null
     }
   },
   methods: {
